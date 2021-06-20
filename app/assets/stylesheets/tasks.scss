@@ -1,0 +1,98 @@
+// StyleSheet
+// Place all the styles related to the Reminders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+
+header,footer {
+    width: 100%;
+    padding: 10px;
+    background-color: #c52f24;
+    color: #fff;
+    margin: 0px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+    padding-left: 0px;
+}
+
+input, pre {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+input[type=submit] {
+    width: auto;
+}
+
+.main_container {
+    margin: 50px 15px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: solid 1px black;
+    padding: 10px 20px;
+}
+
+table td {
+    background-color: #f1c8c861;
+}
+
+table th {
+    background-color: #ffdfdf;
+}
+
+.show_td {
+    text-align: left;
+    max-width: 340px;
+}
+
+.show_th {
+    min-width: 55px;
+}
+
+.edit_td {
+    max-width: 340px;
+    max-height: 300px;
+}
+
+.alert {
+    padding: 15px;
+    width: 400px;
+    text-align: center;
+}
+
+.allday {
+    font-size: 25px;
+}
+
+.timeStamps {
+    display: none;
+}
+
+.timeStamps.active {
+    display: block;
+}

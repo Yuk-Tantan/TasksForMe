@@ -1,0 +1,49 @@
+<%= form_with(model: task, local: true) do |form| %>
+  <% if task.errors.any? %>
+    <div class="alert" id="error_explanation">
+      <h2><%= task.errors.count %> 件のエラーが発見されたのでタスクを保存できませんでした。</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+  <tbody>
+    <tr class="field">
+      <th><%= form.label :title, 'タイトル' %></th>
+      <td><%= form.text_field :title %></td>
+    </tr>
+  
+    <tr class="field">
+      <th><%= form.label :start_date, '開始日' %></th>
+      <td><%= form.date_field :start_date %></td>
+    </tr>
+  
+    <tr class="field">
+      <th><%= form.label :end_date, '終了日' %></th>
+      <td><%= form.date_field :end_date %></td>
+    </tr>
+  
+    <tr class="field">
+      <th><%= form.label :allday, '終日' %></th>
+      <td>
+        <%= form.check_box :allday %>
+        
+      </td>
+    </tr>
+  
+    <tr class="field">
+      <th><%= form.label :note, 'メモ' %></th>
+      <td><%= form.text_area :note %></td>
+    </tr>
+  </tbody>
+</table>
+
+  <div class="actions">
+    <ul><li><%= form.submit 'タスクを更新する' %></li></ul>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<div class="information">
+    <h2>スケジュールの確認</h2>
+</div>
+
+<p class="alert" id="notice"><%= notice %></p>
+
+<table>
+  <tbody>
+    <tr>
+      <th class="show_th">タイトル</th>
+      <td class="show_td"><%= @task.title %></td>
+    </tr>
+    
+    <tr>
+      <th class="show_th">開始日</th>
+      <td class="show_td"><%= @task.start_date.strftime('%Y年%m月%d日') %></td>
+    </tr>
+    
+    <tr>
+      <th class="show_th">終了日</th>
+      <td class="show_td"><%= @task.end_date.strftime('%Y年%m月%d日') %></td>
+    </tr>
+    
+    <tr>
+      <th class="show_th">終日</th>
+      <td class="show_td allday">
+        <% checked = '○' %><% unchecked = '' %>
+        <% if @task.allday == true %>
+          <%= checked %>
+        <% elsif @task.allday == false %>
+          <%= unchecked %>
+        <% end %>
+      </td>
+    </p>
+    
+    <tr>
+      <th class="show_th">メモ</th>
+      <td class="show_td"><%= @task.note %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'タスクを編集', edit_task_path(@task) %> |
+<%= link_to '一覧に戻る', tasks_path %>
